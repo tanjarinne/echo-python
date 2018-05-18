@@ -4,18 +4,10 @@ from http.server import BaseHTTPRequestHandler, HTTPStatus
 
 
 class EchoHandler(BaseHTTPRequestHandler):
-    """
-    EchoHandler
-    """
+    """EchoHandler"""
 
     def handle_one_request(self):
-        """Handle a single HTTP request.
-
-        You normally don't need to override this method; see the class
-        __doc__ string for information on how to handle specific HTTP
-        commands such as GET and POST.
-
-        """
+        """Handle a single HTTP request."""
         try:
             self.raw_requestline = self.rfile.readline(65537)
             if len(self.raw_requestline) > 65536:
