@@ -8,13 +8,11 @@ from echo.handler import EchoHandler
 
 
 class Echo(EchoHandler):
-    """
-    Echo
-    """
+    """Echo"""
 
     @property
     def payload(self) -> str:
-        """Read body entirely and return its content"""
+        """Read body entirely and return its content."""
         result = b''
         length = int(self.headers.get('content-length', 0))
         if length:
@@ -23,16 +21,14 @@ class Echo(EchoHandler):
 
     @property
     def response(self) -> str:
-        """Generate the response Echo responds with"""
+        """Generate the response Echo responds with."""
         return f"""{self.command} {self.path} {self.protocol_version}
 {str(self.headers).strip()}
 
 {str(self.payload.decode('utf-8'))}""".strip()
 
     def do_any(self):
-        """
-        do_any
-        """
+        """Process every request."""
         self.send_response(200)
         self.send_header('Content-Type', 'text/plain')
         self.end_headers()
