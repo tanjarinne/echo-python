@@ -30,4 +30,4 @@ A Makefile is provided to handle common operations – like running the service.
 
 ## Authors
 
-Cats & Foxes 2018
+- Tanja Álva
