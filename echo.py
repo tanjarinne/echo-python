@@ -39,7 +39,7 @@ if __name__ == '__main__':
     import os
 
     host = os.getenv('ECHO_HOST', '0.0.0.0')
-    port = os.getenv('ECHO_PORT', 8018)
+    port = int(os.getenv('ECHO_PORT', 8018))
 
     server = HTTPServer((host, port), Echo)
     print(f'Listening on {host}:{port}')
